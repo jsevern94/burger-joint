@@ -6,13 +6,13 @@ var burger = {
             callback(res);
         });
     },
-    insertOne: function (var1, var2, callback) {
-        orm.insertOne("burgers", var1, var2, function (res) {
+    insertOne: function (columns, values, callback) {
+        orm.insertOne("burgers", columns, values, function (res) {
             callback(res);
         });
     },
-    updateOne: function (var1, var2, callback) {
-        orm.updateOne("burgers", var1, var2, function (res) {
+    updateOne: function (update, condition, callback) {
+        orm.updateOne("burgers", update, condition, function (res) {
             callback(res);
         });
     }
