@@ -4,10 +4,25 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
-router.get()
+router.get("/", function (req, res) {
+    burger.all(function (data) {
+        var handlebarsObj = {
+            burgers: data
+        };
+        res.render("index", handlebarsObj);
+    })
+})
 
-router.post()
+router.post("/api/burgers", function (req, res) {
+    burger.insertOne(function (data) {
 
-router.update()
+    })
+})
+
+router.put("/api/burgers/:id", function (req, res) {
+    burger.updateOne(function (data) {
+
+    })
+})
 
 module.exports = router;
