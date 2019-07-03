@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="card col-4 text-center">
+        <div class="card col-4 text-center text-white bg-secondary">
             <h2 class="card-title">Burgers ordered:</h2>
 
             <ul>
@@ -12,7 +12,7 @@
                 {{#unless devoured}}
                 <li>
                     {{this.burger_name}}
-                    <button class="devour-burger" data-id="{{this.id}}">DEVOUR!</button>
+                    <button class="devour-burger btn btn-outline-warning" data-id="{{this.id}}">DEVOUR!</button>
                 </li>
                 <br>
                 {{/unless}}
@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="col-4"></div>
-        <div class="card col-4 text-center">
+        <div class="card col-4 text-center text-white bg-secondary">
             <h2 class="card-title">Burgers devoured:</h2>
 
             <ul>
@@ -46,7 +46,7 @@
             <input type="text" id="burger-type" name="burger_name">
         </div>
 
-        <button type="submit">Order Burger</button>
+        <button class="btn btn-warning" type="submit">Order Burger</button>
     </form>
 </div>
 
