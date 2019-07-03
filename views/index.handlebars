@@ -1,53 +1,54 @@
-<h1>Hungry for Burgers?</h1>
-
-<div>
-
-    <h2>Burgers ordered:</h2>
-
-    <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        <li>
-            {{this.burger_name}}
-            <br>
-            <button class="devour-burger" data-id="{{this.id}}">DEVOUR!</button>
-        </li>
-        <br>
-        {{/unless}}
-        {{/each}}
-    </ul>
-
+<div class="text-center">
+    <img src="/images/logo_image.png">
 </div>
 
-<div>
+<div class="container">
+    <div class="row">
+        <div class="card col-4 text-center">
+            <h2 class="card-title">Burgers ordered:</h2>
 
-    <h2>Burgers devoured:</h2>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li>
+                    {{this.burger_name}}
+                    <button class="devour-burger" data-id="{{this.id}}">DEVOUR!</button>
+                </li>
+                <br>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-4"></div>
+        <div class="card col-4 text-center">
+            <h2 class="card-title">Burgers devoured:</h2>
 
-    <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        <li>
-            {{this.burger_name}}
-        </li>
-        <br>
-        {{/if}}
-        {{/each}}
-    </ul>
-
-</div>
-
-<h2>What kind of burger would you like?</h2>
-<form id="order-burger">
-
-    <div class="form-group">
-        <label for="burger-type">Burger:</label>
-        <input type="text" id="burger-type" name="burger_name">
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li>
+                    {{this.burger_name}}
+                </li>
+                <br>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
+</div>
 
-    <br>
+<div class="mt text-center">
+    <h2>What kind of burger would you like?</h2>
+    <form id="order-burger">
 
-    <button type="submit">Order Burger</button>
-</form>
+        <div class="form-group">
+            <label for="burger-type">Burger:</label>
+            <input type="text" id="burger-type" name="burger_name">
+        </div>
+
+        <button type="submit">Order Burger</button>
+    </form>
+</div>
 
 <script>
     $(document).ready(function () {
